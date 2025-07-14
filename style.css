@@ -1,0 +1,172 @@
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      /*smooth scrolling*/
+            scroll-behavior: smooth;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Navbar */
+    nav {
+      background: #004080;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      text-decoration: underline;
+    }
+
+    /* Home Section */
+    header.home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #0066cc 0%, #004080 100%);
+      color: white;
+      min-height: 80vh;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    header.home h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: slideUp 1s ease forwards;
+    }
+    header.home p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    header.home a.cta-btn {
+      background: #ff6600;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(255, 102, 0, 0.5);
+      transition: background 0.3s ease;
+    }
+    header.home a.cta-btn:hover,
+    header.home a.cta-btn:focus {
+      background: #e65c00;
+      outline: none;
+    }
+
+    /* Features Section */
+    section.features {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    section.features h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #004080;
+    }
+    .feature {
+      background: #f0f4f8;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .feature:hover,
+    .feature:focus-within {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      outline: none;
+    }
+    .feature h3 {
+      margin-bottom: 1rem;
+      color: #0066cc;
+    }
+    .feature p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Media Queries - Mobile First ,tablet and desktop*/
+    @media (min-width: 600px) {
+      nav ul {
+        gap: 2.5rem;
+      }
+      header.hero h1 {
+        font-size: 3rem;
+      }
+      header.hero p {
+        font-size: 1.3rem;
+      }
+      section.features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 900px) {
+      section.features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      header.hero {
+        padding: 6rem 2rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
